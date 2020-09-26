@@ -1,11 +1,13 @@
-import React from 'react'; /* Importação do React */
-import Header from './components/Header/index'; /* Importação do Header */
+import React from 'react';
+import Header from './components/Header/index';
+import Hero from './components/Hero/index';
 
 /* Função principal da aplicação, onde terá os componentes. Ex.: Header. */
 function App() {
   return (
     <div className="App">
       <Header />
+      <Hero />
     </div>
   );
 }
