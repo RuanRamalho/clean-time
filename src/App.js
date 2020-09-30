@@ -1,5 +1,4 @@
 import React from 'react';
-import Header from './components/Header/index';
 import Routes from './routes';
 
 /* Função principal da aplicação, onde terá os componentes. Ex.: Header. */

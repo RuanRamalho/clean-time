@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import { Container, Col, Row } from 'reactstrap';
-import { media } from '../../components/Breackpoints/style';
-import { SectionContract, Perfil, Card, Text } from './style.js';
+import { SectionHire, Perfil, Card, Text } from './style.js';
 
-export default class Contract extends Component {
+export default class Hire  extends Component {
   render(){
     return(
-      <SectionContract>
+      <SectionHire>
         <Container>
           <Card>
             <Row>
@@ -65,7 +64,7 @@ export default class Contract extends Component {
             </Row>
           </Card>
         </Container>
-      </SectionContract>
+      </SectionHire>
     );
   };
 };

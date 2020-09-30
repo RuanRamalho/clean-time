@@ -1,8 +1,9 @@
-import styled from 'styled-components'; 
+import styled from 'styled-components';
 import { media } from '../../components/Breackpoints/style';
 
-export const SectionContract = styled.section `
-  
+export const SectionHire = styled.section `
+  background: #f2943a;
+  padding: 3px 0;
 `;
 
 export const Card = styled.div `
@@ -18,22 +19,19 @@ export const Perfil = styled.div `
   background: #ccc;
 `;
 
-export const Text = styled.div ` 
+export const Text = styled.div `
   display: flex;
   flex-direction: column;
   justify-content: center;
   height: 100%;
   text-align: center;
-
   h1 {
     font-size: 26px;
   }
-
   p {
     font-weight: bold;
     font-size: 15px;
   }
-
   ${media.breackpoint_md} {
     display: flex;
     align-items: flex-end;
