@@ -1,8 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './style.css';
 import Logo from '../../images/logo.jpeg';
-import { Container, Col} from 'reactstrap';
-
+import { Container } from 'reactstrap';
 
 /* Abaixo está a função responsável pelo Header */
 const Header = () => {
@@ -15,10 +15,10 @@ const Header = () => {
           </div>
           <div className="navbar">
             <ul>
-              <li><a>home</a></li>
-              <li><a>sobre</a></li>
-              <li><a>contrate</a></li>
-              <li><a>seja contratado</a></li>
+              <li><Link to = { '/index' }>home</Link></li>
+              <li><a href="#">sobre</a></li>
+              <li><Link to = { '/contract' }>contrate</Link></li>
+              <li><a href="#">seja contratado</a></li>
             </ul>
           </div>
         </div>
