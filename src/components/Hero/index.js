@@ -1,6 +1,7 @@
 import React from 'react';
 import './style.css';
-import { Container, Col, Row} from 'reactstrap';
+import { Container, Col } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
   return (
@@ -12,7 +13,7 @@ const Hero = () => {
               <h1>Não adianta correr, a limpeza precisa acontecer!</h1>
             </div>
             <div className="button">
-              <a href="">Contrate Já</a>
+              <Link to = { '/contract' } >Contrate Já</Link>
             </div>
           </Col>
         </div>
