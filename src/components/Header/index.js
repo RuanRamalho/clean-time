@@ -1,31 +1,30 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import './style.css';
-import Logo from '../../images/logo.jpeg';
-import { Container } from 'reactstrap';
+import { Container, NavbarToggler } from 'reactstrap';
+import { media } from '../../components/Breackpoints/style';
+import { SectionHeader, HeaderContent, Logo, Navbar } from './style.js';
+import LogoImage from '../../images/logo.jpeg';
 
-/* Abaixo está a função responsável pelo Header */
 const Header = () => {
   return (
-    <header>
+    <SectionHeader>
       <Container>
-        <div className="header-content">
-          <div className="logo">
-            <img src={ Logo } alt="logo" />
-          </div>
-          <div className="navbar">
-            <ul>
-              <li><Link to = { '/index' }>home</Link></li>
-              <li><a href="#">sobre</a></li>
-              <li><Link to = { '/contract' }>contrate</Link></li>
-              <li><a href="#">seja contratado</a></li>
-            </ul>
-          </div>
-        </div>
+        <HeaderContent>
+              <Logo>
+                <img src={ LogoImage } alt="logo" />
+              </Logo>
+            <Navbar>
+                <ul>
+                  <li><Link to = { '/index' }>home</Link></li>
+                  <li><a href="#">sobre</a></li>
+                  <li><Link to = { '/contract' }>contrate</Link></li>
+                  <li><a href="#">seja contratado</a></li>
+                </ul>
+            </Navbar>
+        </HeaderContent>
       </Container>
-    </header>
+    </SectionHeader>
   )
 }
 
-/* Abaixo, está sendo exportado a função Header para porder chamá-la no aquivo principal (App) */
 export default Header;
