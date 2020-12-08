@@ -15,8 +15,11 @@ export const Card = styled.div `
 
 export const Perfil = styled.div `
   width: 100%;
-  height: 250px;
   background: #ccc;
+
+  img {
+    width: 100%;
+  }
 `;
 
 export const Text = styled.div `
@@ -25,6 +28,8 @@ export const Text = styled.div `
   justify-content: center;
   height: 100%;
   text-align: center;
+  margin-top: 20px;
+
   h1 {
     font-size: 26px;
   }
@@ -32,9 +37,27 @@ export const Text = styled.div `
     font-weight: bold;
     font-size: 15px;
   }
+
+  .know-more {
+    border-radius: 25px;
+    margin-bottom: 20px;
+  }
+
   ${media.breackpoint_md} {
     display: flex;
     align-items: flex-end;
     margin-right: 40px;
+
+    .know-more{
+      width: 150px;
+      border-radius: 25px;
+      font-weight: bold;
+      transition: .3s;
+
+      &:hover {
+        background: #f2943a;
+        color: white;
+      }
+    }
   }
 `;

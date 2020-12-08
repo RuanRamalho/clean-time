@@ -1,9 +1,10 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
 import Header from './components/Header/index';
 import Hero from './components/Hero/index';
 import Hire from './Pages/Hire/index';
 import BeHire from './Pages/BeHire/index';
+import UserDetails from './Pages/UserDetails/index';
 
 const Routes = () => (
   <BrowserRouter>
@@ -14,7 +15,10 @@ const Routes = () => (
     <Route exact path = '/Hire' component = { Hire } ></Route>
 
     <Route exact path = '/BeHire' component = { Header }></Route>
-    <Route exacto path = '/BeHire' component = { BeHire }></Route>
+    <Route exact path = '/BeHire' component = { BeHire }></Route>
+
+    <Route exact path = '/UserDetails' component = { Header }></Route>
+    <Route exact path = '/UserDetails/:id' component = { UserDetails }></Route>
   </BrowserRouter>
 )
 

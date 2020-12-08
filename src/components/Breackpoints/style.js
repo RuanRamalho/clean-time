@@ -1,4 +1,4 @@
-import styled from 'styled-components'; 
+import styled from 'styled-components';
 
 export const media = {
   breackpoint_sm: '@media(min-width: 576px)',
