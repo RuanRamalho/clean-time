@@ -5,6 +5,7 @@ import api from '../../Service/api'
 
 export default class BeHire extends Component {
   state = {
+    users: [],
     NewUser: {
       image: "",
       name: "",
@@ -17,6 +18,26 @@ export default class BeHire extends Component {
     },
   }
 
+  componentDidMount() {
+    this.loadUsers();
+  }
+
+  loadUsers = async (page = 1) => {
+    try {
+      const response = await api.get(`/index?page=${page}`);
+
+      if (response.status == 200) {
+        const { docs } = response.data;
+        this.setState({ users: docs });
+        console.log(this.state.users);
+      }
+
+    } catch (error) {
+      alert("Erro na requisição!");
+      console.log(error);
+    }
+  }
+
   createNewUser = async () => {
     var { image, name, email, birth_day, description, estate, city, phone_number } = this.state.NewUser;
 
@@ -25,7 +46,7 @@ export default class BeHire extends Component {
     email = document.querySelector('input[name="text-email"]').value;
     birth_day = document.querySelector('input[name="text-birth_day"]').value;
     description = document.querySelector('textarea[name="text-description"]').value;
-    estate = document.querySelector('input[name="select-estate"]').value;
+    estate = document.querySelector('select[name="select-estate"]').value;
     city = document.querySelector('input[name="text-city"]').value;
     phone_number = document.querySelector('input[name="text-phone_number"]').value;
 
@@ -84,7 +105,7 @@ export default class BeHire extends Component {
                 <Col sm="12" md="6">
                   <FormGroup>
                     <Label className="font-weight-bold font-size-16" for="exampleEmail">Estado</Label>
-                    <Input type="select" name="select-estate" id="select-estate" name="select-estate">
+                    <select className="form-control" name="select-estate" id="select-estate">
                             <option value="Acre">Acre</option>
                             <option value="Alagoas">Alagoas</option>
                             <option value="Amapá">Amapá</option>
@@ -112,7 +133,7 @@ export default class BeHire extends Component {
                             <option value="São Paulo">São Paulo</option>
                             <option value="Sergipe">Sergipe</option>
                             <option value="Tocantins">Tocantins</option>
-                          </Input>
+                          </select>
                   </FormGroup>
                 </Col>
                 <Col sm="12" md="6">
@@ -130,11 +151,11 @@ export default class BeHire extends Component {
                 <Col sm="12" md="12">
                   <FormGroup className="d-flex flex-column">
                     <Label className="font-weight-bold font-size-16" for="exampleEmail">Descrição</Label>
-                    <TextArea type="text" name="message-text" id="exampleEmail" cols="30" rows="6"/>
+                    <TextArea type="text" name="text-description" id="exampleEmail" cols="30" rows="6"/>
                   </FormGroup>
                 </Col>
                 <Col sm="12" md="12">
-                  <Button type="submit" onClick={ this.createNewUser }>Enviar</Button>
+                  <button type="button" className="btn btn-primary" onClick={ this.createNewUser } data-dismiss="modal">Cadastrar</button>
                 </Col>
               </Row>
             </Form>
